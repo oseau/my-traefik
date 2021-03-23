@@ -20,22 +20,22 @@ services:
     labels:
       # Traefik label
       - "traefik.enable=true"
-      
+
       # Asociates router with your specific domain or subdomain and websecure (https)
       - "traefik.http.routers.change_this_service_name.rule=Host(`change_this_service_url`)"
       - "traefik.http.routers.change_this_service_name.entrypoints=websecure"
-      
+
       # Enables tls
       # If theres is no cert for the domain or subdomain traefik creates it and save it to json in shared volume
       # If any cert is to be expired, traefik creates a new one too
       - "traefik.http.routers.change_this_service_name.tls=true"
-      
+
       # Asociation with resolver (see static.yml file)
       - "traefik.http.routers.change_this_service_name.tls.certresolver=resolver"
-      
+
       # add security middleware
       - "traefik.http.routers.change_this_service_name.middlewares=security-headers"
-      
+
       # Set default options (see dynamic.yaml for this)
       - "traefik.http.routers.change_this_service_name.tls.options=default"
 
